@@ -90,5 +90,31 @@ public class StudentsAPI {
 	}
 
 
+	//Update specific information of a student by student id using patch method
+
+	@Test(priority = 4)
+	void partialUpdate(){
+		map.put("f_name", studentUtilities.p_update_stu_firstname());
+		map.put("l_name", studentUtilities.p_update_stu_lastname());
+		map.put("age", studentUtilities.p_update_stu_age());
+
+
+		given()
+				.contentType("application/json")
+				.body(map)
+		.when()
+				.patch("http://127.0.0.1:8000/api/partially/update/student_info/4")
+		.then()
+				.log().all()
+				.assertThat()
+				.statusCode(202)
+				.and()
+				.statusLine("HTTP/1.1 202 Accepted")
+				.assertThat()
+				.body("Message", equalTo("Student info. has been updated successfully"))
+				.and()
+				.body("Success", equalTo(true));
+
+	}
 
 }
