@@ -1,0 +1,1 @@
+### Institute Management API Test By Rest Assured 
