@@ -72,5 +72,24 @@ public class studentUtilities {
     }
 
 
+    /*  //patch() request
+    {
+            "f_name": "Faysal",
+            "l_name": "Sarder",
+            "age": 23
+     }
+     */
+
+    public static String p_update_stu_firstname(){
+        return "Mohammad";
+    }
+    public static String p_update_stu_lastname(){
+        return "Faysal";
+    }
+    public static Integer p_update_stu_age(){
+        return 24;
+    }
+
+
 
 }
